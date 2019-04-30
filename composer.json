@@ -1,0 +1,8 @@
+{
+  "name": "leacloud/mysql-adminer",
+  "require": {
+    "php": "7.2.x",
+    "ext-mysqli": "*",
+    "leancloud/leancloud-sdk": "^0.8"
+  }
+}
