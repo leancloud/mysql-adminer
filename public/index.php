@@ -10,4 +10,4 @@ if (php_sapi_name() === 'cli-server') {
 }
 
 require __DIR__ . '/../src/app.php';
-require __DIR__ . '/../src/adminer-4.7.1-mysql.php';
+require __DIR__ . '/../src/adminer-4.7.6.php';
