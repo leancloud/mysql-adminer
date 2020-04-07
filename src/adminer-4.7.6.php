@@ -1186,8 +1186,8 @@ collations(){return
 array();}function
 logged_user(){global$b;$Kb=$b->credentials();return$Kb[1];}function
 connect(){global$b;$h=new
-Min_DB;list($M,$V,$E)=$b->credentials();$Cf=array();if($V.$E!=""){$Cf["username"]=$V;$Cf["password"]=$E;}$l=$b->database();if($l!="")$Cf["db"]=$l;if(($Ma=getenv("MONGO_AUTH_SOURCE")))$Cf["authSource"]=$Ma;try{$h->_link=$h->connect("mongodb://$M",$Cf);if($E!=""){$Cf["password"]="";try{$h->connect("mongodb://$M",$Cf);return
-lang(22);}catch(Exception$Ec){}}return$h;}catch(Exception$Ec){return$Ec->getMessage();}}function
+Min_DB;list($M,$V,$E)=$b->credentials();$Cf=array();if($V.$E!=""){$Cf["username"]=$V;$Cf["password"]=$E;}$l=$b->database();if($l!="")$Cf["db"]=$l;if(($Ma=getenv("MONGO_AUTH_SOURCE")))$Cf["authSource"]=$Ma;try{$h->_link=$h->connect("mongodb://$M",$Cf);
+return$h;}catch(Exception$Ec){return$Ec->getMessage();}}function
 alter_indexes($Q,$c){global$h;foreach($c
 as$X){list($T,$B,$N)=$X;if($N=="DROP")$H=$h->_db->command(array("deleteIndexes"=>$Q,"index"=>$B));else{$f=array();foreach($N
 as$e){$e=preg_replace('~ DESC$~','',$e,1,$Gb);$f[$e]=($Gb?-1:1);}$H=$h->_db->selectCollection($Q)->ensureIndex($f,array("unique"=>($T=="UNIQUE"),"name"=>$B,));}if($H['errmsg']){$h->error=$H['errmsg'];return
